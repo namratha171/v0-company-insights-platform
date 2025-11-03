@@ -37,9 +37,9 @@ export default function CompanyList() {
     return "text-blue-600"
   }
 
-  const handleViewWebsite = (website?: string) => {
-    if (website) {
-      window.open(`https://${website}`, "_blank")
+  const handleViewWebsite = (careerUrl?: string) => {
+    if (careerUrl) {
+      window.open(careerUrl, "_blank")
     }
   }
 
@@ -163,16 +163,15 @@ export default function CompanyList() {
                   variant="default"
                   className="w-full"
                   onClick={() => {
-                    // Navigate to company detail page
                     window.location.href = `/company/${company.id}`
                   }}
                 >
                   <ArrowRight className="w-4 h-4 mr-1" />
                   View Details
                 </Button>
-                <Button size="sm" variant="outline" onClick={() => handleViewWebsite(company.website)}>
+                <Button size="sm" variant="outline" onClick={() => handleViewWebsite(company.careerUrl)}>
                   <ExternalLink className="w-4 h-4 mr-1" />
-                  Website
+                  Careers
                 </Button>
               </div>
             </CardContent>
